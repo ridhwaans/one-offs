@@ -1,0 +1,34 @@
+Reads files (tweets_aa, tweets_ab, tweets_ac) and returns the count breakdown in areas for the search keyword
+Keep tweets.py and the given files in the same root directory
+
+EXAMPLE:
+$ python tweets.py knicks
+
+OUTPUT:
+Count results for 'knicks'
+
+In 'tweets_ac':
+Bronx 16
+Brooklyn 12
+Staten Island 11
+Manhattan 13
+Queens 13
+TOTAL: 65
+
+In 'tweets_ab':
+Bronx 13
+Brooklyn 19
+Staten Island 8
+Manhattan 58
+Queens 21
+TOTAL: 119
+
+In 'tweets_aa':
+Bronx 20
+Brooklyn 31
+Staten Island 10
+Manhattan 53
+Queens 42
+TOTAL: 156
+
+GRAND TOTAL: 340
