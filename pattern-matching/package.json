@@ -1,0 +1,15 @@
+{
+    "name": "pattern-matching",
+    "version": "0.0.1",
+    "description": "Find patterns in input file",
+    "preferGlobal": "true",
+    "bin": {
+        "pattern-matching": "pattern-matching.js"
+    },
+    "author": "Ridhwaan",
+    "engines": {
+        "node": "*"
+    },
+    "dependencies": {
+    }
+}

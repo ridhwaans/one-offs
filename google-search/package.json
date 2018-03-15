@@ -1,0 +1,18 @@
+{
+    "name": "google-search",
+    "version": "0.0.1",
+    "description": "Google search returns title and url of first search result.",
+    "preferGlobal": "true",
+    "bin": {
+        "google-search": "google-search.js"
+    },
+    "author": "Ridhwaan",
+    "engines": {
+        "node": "*"
+    },
+    "dependencies": {
+        "bluebird": "^3.5.1",
+        "google": "^2.1.0",
+        "prompt": "^1.0.0"
+    }
+}
