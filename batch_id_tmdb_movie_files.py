@@ -3,10 +3,6 @@
 Append a TMDB MovieID to the names of all recursive files in a directory
 """
 
-__author__ = "Ridhwaan Shakeel"
-__version__ = "0.1.0"
-__license__ = "MIT"
-
 import requests
 import os
 import argparse

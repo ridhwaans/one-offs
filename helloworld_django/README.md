@@ -1,7 +1,7 @@
 helloworld_django
 =================
 
-A helloworld HTTP endpoint app made in Python and Django 1.9.4
+Made in Python and Django 1.9.4
 
 #### setup
 Please make sure to run the following to install dependencies
