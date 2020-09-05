@@ -10,7 +10,6 @@ import PTN
 import re
 
 def main(args):
-    """ Main entry point of the app """
     i = 0
     print("hello world")
     print(args.arg)
@@ -33,7 +32,6 @@ def main(args):
                 os.rename(filepath, new_filepath)
 
 if __name__ == "__main__":
-    """ This is executed when run from the command line """
     parser = argparse.ArgumentParser()
 
     # Required positional argument

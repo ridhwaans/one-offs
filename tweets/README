@@ -1,5 +1,5 @@
-Reads files (tweets_aa, tweets_ab, tweets_ac) and returns the count breakdown in areas for the search keyword
-Keep tweets.py and the given files in the same root directory
+Reads the given files (tweets_aa, tweets_ab, tweets_ac) and returns the count breakdown in areas for the search keyword
+Keep tweets.py and the given files in the same directory
 
 EXAMPLE:
 $ python tweets.py knicks
