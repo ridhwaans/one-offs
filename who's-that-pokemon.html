@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Who's that Pokemon?</title>
+    <style>
+      body {
+        font-family: monospace;
+      }
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+      }
+      #footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+    </style>
+    <script>
+      var id;
+      var name;
+
+      var sourceImg = document.createElement("img");
+      sourceImg.setAttribute("id", "sourceImg");
+      sourceImg.setAttribute("crossorigin", "anonymous");
+
+      var silhouetteImg = document.createElement("img");
+      silhouetteImg.setAttribute("id", "silhouetteImg");
+      silhouetteImg.setAttribute("crossorigin", "anonymous");
+
+      function randomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			
+			//credit: https://dominoc925.blogspot.com/2012/08/javascript-example-code-to-create.html
+      function getSilhouette() {
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width = sourceImg.width;
+        canvas.height = sourceImg.height;
+        ctx.drawImage(sourceImg, 0, 0);
+        var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var pix = imgData.data;
+        for (var i = 0, n = pix.length; i < n; i += 4) {
+          //set red to 0
+          pix[i] = 0;
+          //set green to 0
+          pix[i + 1] = 0;
+          //set blue to 0
+          pix[i + 2] = 0;
+          //retain the alpha value
+          pix[i + 3] = pix[i + 3];
+        }
+        ctx.putImageData(imgData, 0, 0);
+        silhouetteImg.src = canvas.toDataURL();
+        silhouetteImg.onload = () => {
+          document.getElementById("pokemon").src = silhouetteImg.src;
+          document.getElementById("answer").innerHTML = "";
+          document.getElementById("link").innerHTML = "";
+          document.getElementById("result").innerHTML = "";
+          document.getElementById("myInput").type = "text";
+          document.getElementById("myInput").value = "";
+          document.getElementById("myInput").focus();
+          document.getElementById("showOrNext").innerHTML = "Show";
+        };
+      }
+
+      async function getPokemon() {
+        let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + randomInteger(1, 809));
+        let data = await response.json();
+        id = data["id"];
+        name = data["name"];
+        sourceImg.src = data["sprites"]["other"]["official-artwork"]["front_default"];
+        sourceImg.onload = () => {
+          getSilhouette();
+        };
+      }
+
+      function showOrNext() {
+        if (document.getElementById("showOrNext").innerHTML === "Show") {
+          // reveal the pokemon
+          document.getElementById("pokemon").src = sourceImg.src;
+          document.getElementById("answer").innerHTML = name + " ";
+          document.getElementById("link").innerHTML = "View on Bulbapedia";
+          document.getElementById("link").href = "https://bulbapedia.bulbagarden.net/wiki/" + name + "_(Pok%C3%A9mon)";
+          document.getElementById("result").innerHTML = "";
+          document.getElementById("myInput").type = "hidden";
+          document.getElementById("showOrNext").innerHTML = "Next";
+          document.getElementById("showOrNext").focus();
+        } else {
+          // get a new pokemon
+          getPokemon();
+        }
+      }
+
+      window.addEventListener("keyup", function(e) {
+				if (e.keyCode === 13 && document.getElementById("myInput").type !== "hidden") {
+					if (name === document.getElementById("myInput").value) {
+						showOrNext();
+						document.getElementById("result").innerHTML = "<span style='color: green;'>Correct</span>";
+					} else {
+						document.getElementById("result").innerHTML = "<span style='color: red;'>Wrong</span>";
+					}
+				}
+			}, false);
+
+      window.addEventListener("DOMContentLoaded", (event) => {
+        console.log("DOM fully loaded and parsed");
+        showOrNext();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="centered">
+      <img id="pokemon"/>
+      <center>
+        <p><label id="answer"></label><a id="link" target="_blank"></a></p>
+        <input id="myInput" type="text" onblur="this.focus()" autofocus/>
+        <button id="showOrNext" onclick="showOrNext()"></button>
+        <p><label id="result"></label></p>
+      </center>
+    </div>
+    <div id="footer">
+      Pokémon and Pokémon character names are trademarks of Nintendo. This site is not affiliated with Nintendo.
+    </div>
+  </body>
+</html>

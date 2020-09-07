@@ -20,4 +20,4 @@ Usage examples:
   5) The `check_beelzebub_tx_response_time.py` program has to be run as `sudo su root` to get syslog read permission  
 
 #### Choice of programming language
-Python because it is simple and has a large community support for scripting
+Python because it is simple and easy for scripting
