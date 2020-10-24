@@ -106,6 +106,7 @@
 						document.getElementById("result").innerHTML = "<span style='color: green;'>Correct</span>";
 					} else {
 						document.getElementById("result").innerHTML = "<span style='color: red;'>Wrong</span>";
+            document.getElementById("myInput").value = "";
 					}
 				}
 			}, false);
@@ -122,7 +123,7 @@
       <img id="pokemon"/>
       <center>
         <p><label id="answer"></label><a id="link" target="_blank"></a></p>
-        <input id="myInput" type="text" onblur="this.focus()" autofocus/>
+        <input id="myInput" type="text" onblur="this.focus()" autofocus autocomplete="off"/>
         <button id="showOrNext" onclick="showOrNext()"></button>
         <p><label id="result"></label></p>
       </center>
