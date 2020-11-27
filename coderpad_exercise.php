@@ -14,7 +14,6 @@
  // Question #1 
  // Pub/Sub Challenge
  // 
- // 
  // 1. The goal is to build a very simple PubSub/event class in PHP. 
  //    We will create an EventEmitter object and then we'll subscribe to events and trigger them. 
  //    Subscribing to an event simply adds a callback to be run when the event is triggered. 
