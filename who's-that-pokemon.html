@@ -100,6 +100,10 @@
       }
 
       window.addEventListener("keyup", function(e) {
+        if (e.keyCode == 13 && e.shiftKey==true) {
+          document.getElementById("showOrNext").innerHTML = "Show";
+          showOrNext();
+        }
 				if (e.keyCode === 13 && document.getElementById("myInput").type !== "hidden") {
 					if (name === document.getElementById("myInput").value) {
 						showOrNext();
@@ -108,7 +112,7 @@
 						document.getElementById("result").innerHTML = "<span style='color: red;'>Wrong</span>";
             document.getElementById("myInput").value = "";
 					}
-				}
+        }
 			}, false);
 
       window.addEventListener("DOMContentLoaded", (event) => {
