@@ -1,3 +1,4 @@
+<!-- https://romantic-lamport-30199c.netlify.app -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,9 +36,9 @@
 
       function randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
-			}
-			
-			//credit: https://dominoc925.blogspot.com/2012/08/javascript-example-code-to-create.html
+      }
+      
+      // credit: https://dominoc925.blogspot.com/2012/08/javascript-example-code-to-create.html
       function getSilhouette() {
         var canvas = document.createElement("canvas");
         var ctx = canvas.getContext("2d");
@@ -104,16 +105,16 @@
           document.getElementById("showOrNext").innerHTML = "Show";
           showOrNext();
         }
-				if (e.keyCode === 13 && document.getElementById("myInput").type !== "hidden") {
-					if (name === document.getElementById("myInput").value) {
-						showOrNext();
-						document.getElementById("result").innerHTML = "<span style='color: green;'>Correct</span>";
-					} else {
-						document.getElementById("result").innerHTML = "<span style='color: red;'>Wrong</span>";
+        if (e.keyCode === 13 && document.getElementById("myInput").type !== "hidden") {
+          if (name === document.getElementById("myInput").value) {
+            showOrNext();
+            document.getElementById("result").innerHTML = "<span style='color: green;'>Correct</span>";
+          } else {
+            document.getElementById("result").innerHTML = "<span style='color: red;'>Wrong</span>";
             document.getElementById("myInput").value = "";
-					}
+          }
         }
-			}, false);
+      }, false);
 
       window.addEventListener("DOMContentLoaded", (event) => {
         console.log("DOM fully loaded and parsed");
