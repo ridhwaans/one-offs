@@ -30,7 +30,7 @@ python-apt==1.1.0b1
 python-dateutil==2.8.0
 python-debian==0.1.27
 pytz==2018.9
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 scandir==1.9.0
 six==1.10.0
