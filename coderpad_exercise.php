@@ -1,15 +1,5 @@
 <?php
 
-  // php code is wrapped in <?php tags
-
-  for ( $i = 0; $i < 5; $i++) {
-    echo "Hello, World\n";
-  }
-?>
-
-
-<?php
-
  //
  // Question #1 
  // Pub/Sub Challenge
@@ -84,8 +74,9 @@ $emitter->emit("success", ["message" => "Great success!."]);
 // Error 2. Yet another error.
 // SUCCESS! Great success!
 
+?>
 
- 
+<?php
 /*
  
  -----------------------------------------------------------------------
@@ -193,7 +184,7 @@ GROUP BY d.DepartmentID
 
 Answer 1: The code is not working as expected because the for loop is synchronuous, and the setTimeout method is async with a 1000ms interval. It returns 6 instead of returning values 1 to 5 periodically. 
 
-Answer 2: To fix the code, we need to fix the timing issue by using things like callbacks, async/await or chaining promises.
+Answer 2: Fix the timing issue by using things like callbacks, async/await or chaining promises.
 
 function counter() {
  var i = 1;
@@ -202,10 +193,8 @@ function counter() {
   else console.log(i++);
   }, 1000);
  }
- counter(); // call this to run solution
- 
- Running counter() will print 1 to 5 with a 1000ms interval
-
+ //  Running counter() will print 1 to 5 with a 1000ms interval
+ counter();
 
 */
 ?>

@@ -83,7 +83,7 @@ class compare_forecasts_test(unittest.TestCase):
     def test_07(self):
         """Test if the program works when the weather forecast service is unavailable
         """
-        # mock the weather forecast service to be down
+        # mock the weather forecast service
         responses.add(**{
           'method'         : responses.GET,
           'url'            : 'http://api.openweathermap.org/data/2.5/forecast?q={}&APPID={}'.format('Toronto', compare_forecasts_test.API_KEY),

@@ -2,10 +2,10 @@
 #### Ridhwaan Shakeel
 
 ## Description:
-This CLI program reads an input and patterns text file, and then finds matches in the input file based on patterns
+This program reads an input and patterns text file, and then finds matches in the input file based on patterns
 
 ## Why implement the way I did
-Used a switch statement to choose a mode while pattern matching
+Used a switch statement to choose from different patten matching modes
 
 
 ## Command line instructions:

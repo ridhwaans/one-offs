@@ -25,6 +25,7 @@
     <script>
       var id;
       var name;
+      var score = 0;
 
       var sourceImg = document.createElement("img");
       sourceImg.setAttribute("id", "sourceImg");
@@ -109,6 +110,8 @@
           if (name === document.getElementById("myInput").value) {
             showOrNext();
             document.getElementById("result").innerHTML = "<span style='color: green;'>Correct</span>";
+            score += 1;
+            document.getElementById("score").innerHTML = score;
           } else {
             document.getElementById("result").innerHTML = "<span style='color: red;'>Wrong</span>";
             document.getElementById("myInput").value = "";
@@ -124,6 +127,7 @@
   </head>
 
   <body>
+    <p>Enter to submit answer or show next <br> Shift + Enter to show answer <br> Score: <a id="score">0</a> </p>
     <div class="centered">
       <img id="pokemon"/>
       <center>
