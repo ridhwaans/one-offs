@@ -78,7 +78,6 @@ $emitter->emit("success", ["message" => "Great success!."]);
 
 <?php
 /*
- 
  -----------------------------------------------------------------------
   
   Question #2 
@@ -195,6 +194,6 @@ function counter() {
  }
  //  Running counter() will print 1 to 5 with a 1000ms interval
  counter();
-
+ 
 */
 ?>
