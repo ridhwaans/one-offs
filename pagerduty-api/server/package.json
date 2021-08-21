@@ -1,0 +1,25 @@
+{
+  "name": "pagerduty-api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "NODE_ENV=dev node server",
+    "client-dev": "cd ../client && npm start",
+    "start-dev": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run client-dev\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "qs": "^6.10.1",
+    "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.12",
+    "npm-check-updates": "^11.8.3"
+  }
+}
