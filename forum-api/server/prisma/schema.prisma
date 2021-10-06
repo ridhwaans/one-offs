@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Account {
+  id       Int       @id @default(autoincrement())
+  username String
+  Topic    Topic[]
+  Comment  Comment[]
+}
+
+model Topic {
+  id         Int       @id @default(autoincrement())
+  name       String
+  date_added DateTime
+  account_id Int
+  account    Account   @relation(fields: [account_id], references: [id])
+  Comment    Comment[]
+}
+
+model Comment {
+  id                Int       @id @default(autoincrement())
+  account_id        Int
+  text              String
+  date_added        DateTime
+  topic_id          Int // what topic the comment belongs in
+  parent_comment_id Int? // what the comment is replying to
+  children_comment  Comment[] @relation("CommentToComment")
+  account           Account   @relation(fields: [account_id], references: [id])
+  topic             Topic     @relation(fields: [topic_id], references: [id])
+  Comment   Comment? @relation("CommentToComment", fields: [commentId], references: [id])
+  commentId Int?
+}
+
+//
