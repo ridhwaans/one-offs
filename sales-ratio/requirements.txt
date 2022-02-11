@@ -34,7 +34,7 @@ PyYAML==3.12
 requests==2.18.4
 scandir==1.9.0
 six==1.10.0
-Twisted==17.9.0
+Twisted==22.1.0
 urllib3==1.22
 yarg==0.1.9
 zope.interface==4.4.3
