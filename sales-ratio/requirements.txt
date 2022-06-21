@@ -14,7 +14,7 @@ hyperlink==18.0.0
 idna==2.6
 incremental==17.5.0
 more-itertools==5.0.0
-numpy==1.14.2
+numpy==1.22.0
 pandas==0.24.1
 parse-torrent-name==1.1.1
 pathlib2==2.3.3
